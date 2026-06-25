@@ -4,46 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoSort AI</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="container">
+
+<div class="container">
+
     <h1>🌱 EcoSort AI</h1>
+
     <p class="subtitle">
-      AI-powered Waste Segregation Assistant using IBM Granite
+        AI-powered Waste Segregation Assistant using IBM Granite
     </p>
-    <input
-    id="itemInput"
-    type="text"
-    placeholder="Enter a waste item (Example: Plastic Bottle)"
-    >
-    <button onclick="classifyWaste()">
-    Classify Waste
-    </button>
-  <div id="result"></div>
-    <div class="info">
-    <div class="card">
-        <h3>Recycling Tips</h3>
-        <p id="tips">
-            Enter a waste item to receive recycling tips.
-        </p>
+
+    <div class="status">
+        <span class="dot"></span>
+        AI Model Ready
     </div>
 
-    <div class="card">
-        <h3>Environmental Impact</h3>
-        <p id="impact">
-            Proper waste segregation helps reduce pollution and supports recycling.
-        </p>
-        <div class="status">
-            <span class="dot"></span>
-            AI Model Ready
+    <input
+        id="itemInput"
+        type="text"
+        list="wasteSuggestions"
+        placeholder="Enter a waste item..."
+    >
+
+    <datalist id="wasteSuggestions">
+        <option value="Plastic Bottle">
+        <option value="Plastic Bag">
+        <option value="Plastic Container">
+        <option value="Glass Bottle">
+        <option value="Glass Jar">
+        <option value="Paper">
+        <option value="Newspaper">
+        <option value="Cardboard">
+        <option value="Aluminium Can">
+        <option value="Tin Can">
+        <option value="Banana Peel">
+        <option value="Apple Core">
+        <option value="Eggshell">
+        <option value="Tea Leaves">
+        <option value="Battery">
+        <option value="Medicine">
+        <option value="Paint Can">
+        <option value="Light Bulb">
+        <option value="Laptop">
+        <option value="Mobile Phone">
+        <option value="Keyboard">
+        <option value="Mouse">
+        <option value="Charger">
+        <option value="Pizza Box">
+        <option value="Coffee Cup">
+        <option value="Milk Carton">
+        <option value="Shampoo Bottle">
+    </datalist>
+
+    <select id="wasteSelect" onchange="fillWasteItem()">
+
+        <option value="">📋 Select Waste Item</option>
+
+        <optgroup label="Plastic">
+            <option>Plastic Bottle</option>
+            <option>Plastic Bag</option>
+            <option>Plastic Container</option>
+        </optgroup>
+
+        <optgroup label="Glass">
+            <option>Glass Bottle</option>
+            <option>Glass Jar</option>
+        </optgroup>
+
+        <optgroup label="Paper">
+            <option>Paper</option>
+            <option>Newspaper</option>
+            <option>Cardboard</option>
+        </optgroup>
+
+        <optgroup label="Metal">
+            <option>Aluminium Can</option>
+            <option>Tin Can</option>
+        </optgroup>
+
+        <optgroup label="Organic">
+            <option>Banana Peel</option>
+            <option>Apple Core</option>
+            <option>Eggshell</option>
+            <option>Tea Leaves</option>
+        </optgroup>
+
+        <optgroup label="Hazardous">
+            <option>Battery</option>
+            <option>Medicine</option>
+            <option>Paint Can</option>
+            <option>Light Bulb</option>
+        </optgroup>
+
+        <optgroup label="Electronic">
+            <option>Laptop</option>
+            <option>Mobile Phone</option>
+            <option>Keyboard</option>
+            <option>Mouse</option>
+            <option>Charger</option>
+        </optgroup>
+
+        <optgroup label="Household">
+            <option>Pizza Box</option>
+            <option>Coffee Cup</option>
+            <option>Milk Carton</option>
+            <option>Shampoo Bottle</option>
+        </optgroup>
+
+        <option value="other">❓ Other</option>
+
+    </select>
+
+    <button onclick="classifyWaste()">
+        Classify Waste
+    </button>
+
+    <div id="result"></div>
+
+    <div class="info">
+
+        <div class="card">
+            <h3>Recycling Tips</h3>
+            <p id="tips">
+                Enter a waste item to receive recycling tips.
+            </p>
         </div>
+
+        <div class="card">
+            <h3>Environmental Impact</h3>
+            <p id="impact">
+                Proper waste segregation helps reduce pollution and supports recycling.
+            </p>
+        </div>
+
     </div>
+
 </div>
-  </div>
-  <script src="script.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
