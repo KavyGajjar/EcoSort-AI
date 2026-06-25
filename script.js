@@ -148,8 +148,8 @@ function classifyWaste(){
         "grass":{
             type:"Biodegradable",
             dispose:"Place in garden waste or compost."
-        }
-
+        },
+        
         // Additional Plastic
         "toothpaste tube":{
             type:"Recyclable",
@@ -173,10 +173,6 @@ function classifyWaste(){
         },
         
         // Additional Paper
-        "magazine":{
-            type:"Recyclable",
-            dispose:"Recycle with paper."
-        },
         "paper cup":{
             type:"Recyclable",
             dispose:"Recycle if clean."
@@ -213,10 +209,6 @@ function classifyWaste(){
         },
         
         // Additional Metal
-        "steel can":{
-            type:"Recyclable",
-            dispose:"Clean before recycling."
-        },
         "aluminium foil":{
             type:"Recyclable",
             dispose:"Clean and compress before recycling."
@@ -230,10 +222,6 @@ function classifyWaste(){
         "orange peel":{
             type:"Biodegradable",
             dispose:"Compost or wet waste."
-        },
-        "coffee grounds":{
-            type:"Biodegradable",
-            dispose:"Ideal for compost."
         },
         "fruit waste":{
             type:"Biodegradable",
