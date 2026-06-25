@@ -1,18 +1,5 @@
-function fillWasteItem(){
-
-    const selected=document.getElementById("wasteSelect").value;
-
-    if(selected==="other"){
-        document.getElementById("itemInput").value="";
-        return;
-    }
-
-    document.getElementById("itemInput").value=selected;
-
-}
 function classifyWaste(){
     const item=document.getElementById("itemInput").value.toLowerCase().trim();
-    const selected=document.getElementById("wasteSelect").value;
     const result=document.getElementById("result");
 
     const wasteData={
@@ -164,7 +151,7 @@ function classifyWaste(){
         }
     };
 
-    if(item==="" || selected==="other"){
+    if(item===""){
         result.innerHTML="Please enter a waste item.";
         return;
     }
