@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort AI</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>🌱 EcoSort AI</h1>
+    <p class="subtitle">
+      AI-powered Waste Segregation Assistant using IBM Granite
+    </p>
+    <input
+    id="itemInput"
+    type="text"
+    placeholder="Enter a waste item (Example: Plastic Bottle)"
+    >
+    <button onclick="classifyWaste()">
+    Classify Waste
+    </button>
+  <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
