@@ -2,158 +2,32 @@ function classifyWaste(){
     const item=document.getElementById("itemInput").value.toLowerCase().trim();
     const result=document.getElementById("result");
 
-    const wasteData={
+    const wasteData = {
 
-        // Plastic
+        // ♻️ Plastic
         "plastic bottle":{
             type:"Recyclable",
             dispose:"Rinse and place in the plastic recycling bin."
-        },
-        "plastic container":{
-            type:"Recyclable",
-            dispose:"Clean before placing in the recycling bin."
         },
         "plastic bag":{
             type:"Recyclable",
             dispose:"Deposit at a plastic collection or recycling center."
         },
-
-        // Paper
-        "newspaper":{
+        "plastic container":{
             type:"Recyclable",
-            dispose:"Recycle with paper waste."
+            dispose:"Clean before placing in the recycling bin."
         },
-        "cardboard":{
+        "shampoo bottle":{
             type:"Recyclable",
-            dispose:"Flatten before placing in the recycling bin."
+            dispose:"Rinse and recycle with plastic waste."
         },
-        "paper":{
+        "milk carton":{
             type:"Recyclable",
-            dispose:"Recycle if clean and dry."
+            dispose:"Rinse and recycle where carton recycling is available."
         },
-        "magazine":{
-            type:"Recyclable",
-            dispose:"Place in the paper recycling bin."
-        },
-
-        // Glass
-        "glass bottle":{
-            type:"Recyclable",
-            dispose:"Place in the glass recycling bin."
-        },
-        "glass jar":{
-            type:"Recyclable",
-            dispose:"Remove lid and recycle separately."
-        },
-
-        // Metal
-        "aluminium can":{
-            type:"Recyclable",
-            dispose:"Crush lightly and recycle."
-        },
-        "steel can":{
-            type:"Recyclable",
-            dispose:"Clean before recycling."
-        },
-        "tin can":{
-            type:"Recyclable",
-            dispose:"Dispose in the metal recycling bin."
-        },
-
-        // Organic
-        "banana peel":{
-            type:"Biodegradable",
-            dispose:"Put into a compost or wet waste bin."
-        },
-        "apple peel":{
-            type:"Biodegradable",
-            dispose:"Dispose in compost."
-        },
-        "vegetable waste":{
-            type:"Biodegradable",
-            dispose:"Place in the wet waste bin."
-        },
-        "food waste":{
-            type:"Biodegradable",
-            dispose:"Dispose in compost or wet waste."
-        },
-        "tea leaves":{
-            type:"Biodegradable",
-            dispose:"Suitable for composting."
-        },
-        "egg shell":{
-            type:"Biodegradable",
-            dispose:"Add to compost."
-        },
-        "coffee grounds":{
-            type:"Biodegradable",
-            dispose:"Use for compost or gardening."
-        },
-
-        // Electronic & Hazardous
-        "battery":{
-            type:"Hazardous",
-            dispose:"Take to an authorized e-waste collection center."
-        },
-        "mobile phone":{
-            type:"E-Waste",
-            dispose:"Recycle through certified e-waste facilities."
-        },
-        "charger":{
-            type:"E-Waste",
-            dispose:"Dispose at an e-waste collection center."
-        },
-        "laptop":{
-            type:"E-Waste",
-            dispose:"Give to an authorized e-waste recycler."
-        },
-        "bulb":{
-            type:"Hazardous",
-            dispose:"Dispose through hazardous waste collection."
-        },
-        "tube light":{
-            type:"Hazardous",
-            dispose:"Contains mercury. Do not throw into normal bins."
-        },
-
-        // Medical
-        "medicine":{
-            type:"Medical Waste",
-            dispose:"Return to a pharmacy or authorized collection point."
-        },
-        "syringe":{
-            type:"Medical Waste",
-            dispose:"Dispose in a biomedical waste facility."
-        },
-        "mask":{
-            type:"Medical Waste",
-            dispose:"Seal before disposing according to local guidelines."
-        },
-
-        // Textile
-        "old clothes":{
-            type:"Reusable",
-            dispose:"Donate or send for textile recycling."
-        },
-        "shoes":{
-            type:"Reusable",
-            dispose:"Donate if usable or recycle through textile programs."
-        },
-
-        // Garden
-        "dry leaves":{
-            type:"Biodegradable",
-            dispose:"Compost or use as mulch."
-        },
-        "grass":{
-            type:"Biodegradable",
-            dispose:"Place in garden waste or compost."
-        },
-        
-        // Additional Plastic
         "toothpaste tube":{
             type:"Recyclable",
-            dispose:"Clean and recycle if accepted locally."
+            dispose:"Recycle if accepted by your local recycling facility."
         },
         "detergent bottle":{
             type:"Recyclable",
@@ -171,8 +45,28 @@ function classifyWaste(){
             type:"Non-Recyclable",
             dispose:"Dispose in general waste."
         },
-        
-        // Additional Paper
+    
+        // 📄 Paper
+        "paper":{
+            type:"Recyclable",
+            dispose:"Recycle if clean and dry."
+        },
+        "newspaper":{
+            type:"Recyclable",
+            dispose:"Recycle with paper waste."
+        },
+        "magazine":{
+            type:"Recyclable",
+            dispose:"Recycle with paper."
+        },
+        "cardboard":{
+            type:"Recyclable",
+            dispose:"Flatten before placing in the recycling bin."
+        },
+        "pizza box":{
+            type:"Recyclable",
+            dispose:"Recycle if clean. If greasy, compost or dispose as wet waste."
+        },
         "paper cup":{
             type:"Recyclable",
             dispose:"Recycle if clean."
@@ -183,7 +77,7 @@ function classifyWaste(){
         },
         "notebook":{
             type:"Recyclable",
-            dispose:"Recycle after removing plastic cover."
+            dispose:"Recycle after removing plastic covers."
         },
         "office paper":{
             type:"Recyclable",
@@ -191,55 +85,115 @@ function classifyWaste(){
         },
         "envelope":{
             type:"Recyclable",
-            dispose:"Recycle after removing plastic window."
+            dispose:"Recycle after removing any plastic window."
         },
-        
-        // Additional Glass
+    
+        // 🍾 Glass
+        "glass bottle":{
+            type:"Recyclable",
+            dispose:"Place in the glass recycling bin."
+        },
+        "glass jar":{
+            type:"Recyclable",
+            dispose:"Remove lid and recycle separately."
+        },
         "broken glass":{
             type:"Hazardous",
-            dispose:"Wrap safely before disposal."
+            dispose:"Wrap securely before disposal to prevent injuries."
         },
         "perfume bottle":{
             type:"Recyclable",
-            dispose:"Recycle after removing pump."
+            dispose:"Recycle after removing the spray pump if possible."
         },
         "glass cup":{
             type:"Recyclable",
-            dispose:"Recycle if accepted locally."
+            dispose:"Recycle if accepted by your local recycling program."
         },
-        
-        // Additional Metal
+    
+        // 🥫 Metal
+        "aluminium can":{
+            type:"Recyclable",
+            dispose:"Crush lightly and recycle."
+        },
+        "tin can":{
+            type:"Recyclable",
+            dispose:"Clean before recycling."
+        },
+        "steel can":{
+            type:"Recyclable",
+            dispose:"Clean before recycling."
+        },
         "aluminium foil":{
             type:"Recyclable",
             dispose:"Clean and compress before recycling."
         },
         "beverage can":{
             type:"Recyclable",
-            dispose:"Recycle with metal."
+            dispose:"Recycle with other metal cans."
         },
-        
-        // Additional Organic
+    
+        // 🍌 Organic
+        "banana peel":{
+            type:"Biodegradable",
+            dispose:"Place in compost or wet waste."
+        },
+        "apple core":{
+            type:"Biodegradable",
+            dispose:"Place in compost or wet waste."
+        },
         "orange peel":{
             type:"Biodegradable",
-            dispose:"Compost or wet waste."
+            dispose:"Compost or dispose in wet waste."
+        },
+        "eggshell":{
+            type:"Biodegradable",
+            dispose:"Crush and add to compost."
+        },
+        "tea leaves":{
+            type:"Biodegradable",
+            dispose:"Suitable for composting."
+        },
+        "coffee grounds":{
+            type:"Biodegradable",
+            dispose:"Ideal for composting."
+        },
+        "vegetable waste":{
+            type:"Biodegradable",
+            dispose:"Place in wet waste or compost."
         },
         "fruit waste":{
             type:"Biodegradable",
-            dispose:"Dispose in wet waste."
+            dispose:"Dispose in wet waste or compost."
         },
         "flower waste":{
             type:"Biodegradable",
-            dispose:"Compost."
+            dispose:"Compost when possible."
         },
         "bread":{
             type:"Biodegradable",
-            dispose:"Dispose in wet waste."
+            dispose:"Dispose in wet waste or compost."
         },
-        
-        // Additional Hazardous
+    
+        // 🔋 Hazardous
+        "battery":{
+            type:"Hazardous",
+            dispose:"Take to an authorized battery or e-waste collection center."
+        },
+        "medicine":{
+            type:"Medical Waste",
+            dispose:"Return to a pharmacy or authorized collection point."
+        },
+        "paint can":{
+            type:"Hazardous",
+            dispose:"Take to a hazardous waste collection facility."
+        },
+        "light bulb":{
+            type:"Hazardous",
+            dispose:"Dispose through hazardous waste collection."
+        },
         "cfl bulb":{
             type:"Hazardous",
-            dispose:"Contains mercury. Use hazardous waste collection."
+            dispose:"Contains mercury. Dispose at a hazardous waste facility."
         },
         "thermometer":{
             type:"Hazardous",
@@ -249,11 +203,31 @@ function classifyWaste(){
             type:"Hazardous",
             dispose:"Recycle only if completely empty."
         },
-        
-        // Additional E-Waste
+    
+        // 💻 E-Waste
+        "laptop":{
+            type:"E-Waste",
+            dispose:"Recycle through an authorized e-waste recycler."
+        },
+        "mobile phone":{
+            type:"E-Waste",
+            dispose:"Recycle through certified e-waste facilities."
+        },
+        "keyboard":{
+            type:"E-Waste",
+            dispose:"Recycle through an authorized e-waste collection center."
+        },
+        "mouse":{
+            type:"E-Waste",
+            dispose:"Recycle through an authorized e-waste collection center."
+        },
+        "charger":{
+            type:"E-Waste",
+            dispose:"Dispose at an e-waste collection center."
+        },
         "usb drive":{
             type:"E-Waste",
-            dispose:"Take to an e-waste collection center."
+            dispose:"Recycle through an authorized e-waste collection center."
         },
         "earphones":{
             type:"E-Waste",
@@ -261,14 +235,22 @@ function classifyWaste(){
         },
         "power bank":{
             type:"E-Waste",
-            dispose:"Contains lithium battery. Dispose at e-waste center."
+            dispose:"Contains lithium battery. Dispose at an e-waste collection center."
         },
         "router":{
             type:"E-Waste",
-            dispose:"Recycle at certified e-waste center."
+            dispose:"Recycle at a certified e-waste center."
         },
-        
-        // Additional Textile
+    
+        // 👕 Textile
+        "old clothes":{
+            type:"Reusable",
+            dispose:"Donate or recycle through textile collection."
+        },
+        "shoes":{
+            type:"Reusable",
+            dispose:"Donate if usable or recycle through textile programs."
+        },
         "bag":{
             type:"Reusable",
             dispose:"Donate or recycle if possible."
