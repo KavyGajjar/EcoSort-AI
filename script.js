@@ -1,5 +1,18 @@
+function fillWasteItem(){
+
+    const selected=document.getElementById("wasteSelect").value;
+
+    if(selected==="other"){
+        document.getElementById("itemInput").value="";
+        return;
+    }
+
+    document.getElementById("itemInput").value=selected;
+
+}
 function classifyWaste(){
     const item=document.getElementById("itemInput").value.toLowerCase().trim();
+    const selected=document.getElementById("wasteSelect").value;
     const result=document.getElementById("result");
 
     const wasteData={
@@ -151,7 +164,7 @@ function classifyWaste(){
         }
     };
 
-    if(item===""){
+    if(item==="" || selected==="other"){
         result.innerHTML="Please enter a waste item.";
         return;
     }
@@ -161,9 +174,10 @@ function classifyWaste(){
         "<h3>"+wasteData[item].type+"</h3>"+
         "<p><strong>Recommended Disposal:</strong><br>"+wasteData[item].dispose+"</p>";
     }else{
-        result.innerHTML=
-        "<h3>IBM Granite AI Suggestion</h3>"+
-        "<p>This prototype does not contain this waste item yet.</p>"+
-        "<p>Suggested Action: Follow your local municipality recycling guidelines or consult an authorized recycling center.</p>";
+
+    result.innerHTML=
+    "<h3>Unknown Waste Item</h3>"+
+    "<p>This item is not available in the current prototype database.</p>"+
+    "<p><strong>Suggested Action:</strong> Follow your local municipality recycling guidelines or consult an authorized recycling center.</p>";
     }
 }
