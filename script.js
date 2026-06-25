@@ -149,6 +149,146 @@ function classifyWaste(){
             type:"Biodegradable",
             dispose:"Place in garden waste or compost."
         }
+
+        // Additional Plastic
+        "toothpaste tube":{
+            type:"Recyclable",
+            dispose:"Clean and recycle if accepted locally."
+        },
+        "detergent bottle":{
+            type:"Recyclable",
+            dispose:"Rinse before recycling."
+        },
+        "water bottle":{
+            type:"Recyclable",
+            dispose:"Place in the plastic recycling bin."
+        },
+        "food wrapper":{
+            type:"Non-Recyclable",
+            dispose:"Dispose in general waste unless recyclable locally."
+        },
+        "plastic spoon":{
+            type:"Non-Recyclable",
+            dispose:"Dispose in general waste."
+        },
+        
+        // Additional Paper
+        "magazine":{
+            type:"Recyclable",
+            dispose:"Recycle with paper."
+        },
+        "paper cup":{
+            type:"Recyclable",
+            dispose:"Recycle if clean."
+        },
+        "paper plate":{
+            type:"Recyclable",
+            dispose:"Recycle if not food-soiled."
+        },
+        "notebook":{
+            type:"Recyclable",
+            dispose:"Recycle after removing plastic cover."
+        },
+        "office paper":{
+            type:"Recyclable",
+            dispose:"Place in paper recycling."
+        },
+        "envelope":{
+            type:"Recyclable",
+            dispose:"Recycle after removing plastic window."
+        },
+        
+        // Additional Glass
+        "broken glass":{
+            type:"Hazardous",
+            dispose:"Wrap safely before disposal."
+        },
+        "perfume bottle":{
+            type:"Recyclable",
+            dispose:"Recycle after removing pump."
+        },
+        "glass cup":{
+            type:"Recyclable",
+            dispose:"Recycle if accepted locally."
+        },
+        
+        // Additional Metal
+        "steel can":{
+            type:"Recyclable",
+            dispose:"Clean before recycling."
+        },
+        "aluminium foil":{
+            type:"Recyclable",
+            dispose:"Clean and compress before recycling."
+        },
+        "beverage can":{
+            type:"Recyclable",
+            dispose:"Recycle with metal."
+        },
+        
+        // Additional Organic
+        "orange peel":{
+            type:"Biodegradable",
+            dispose:"Compost or wet waste."
+        },
+        "coffee grounds":{
+            type:"Biodegradable",
+            dispose:"Ideal for compost."
+        },
+        "fruit waste":{
+            type:"Biodegradable",
+            dispose:"Dispose in wet waste."
+        },
+        "flower waste":{
+            type:"Biodegradable",
+            dispose:"Compost."
+        },
+        "bread":{
+            type:"Biodegradable",
+            dispose:"Dispose in wet waste."
+        },
+        
+        // Additional Hazardous
+        "cfl bulb":{
+            type:"Hazardous",
+            dispose:"Contains mercury. Use hazardous waste collection."
+        },
+        "thermometer":{
+            type:"Hazardous",
+            dispose:"Dispose through hazardous waste collection."
+        },
+        "aerosol can":{
+            type:"Hazardous",
+            dispose:"Recycle only if completely empty."
+        },
+        
+        // Additional E-Waste
+        "usb drive":{
+            type:"E-Waste",
+            dispose:"Take to an e-waste collection center."
+        },
+        "earphones":{
+            type:"E-Waste",
+            dispose:"Recycle through authorized e-waste facilities."
+        },
+        "power bank":{
+            type:"E-Waste",
+            dispose:"Contains lithium battery. Dispose at e-waste center."
+        },
+        "router":{
+            type:"E-Waste",
+            dispose:"Recycle at certified e-waste center."
+        },
+        
+        // Additional Textile
+        "bag":{
+            type:"Reusable",
+            dispose:"Donate or recycle if possible."
+        },
+        "towel":{
+            type:"Reusable",
+            dispose:"Donate or recycle through textile collection."
+        }
     };
 
     if(item===""){
